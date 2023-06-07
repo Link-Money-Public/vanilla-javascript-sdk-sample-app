@@ -4,6 +4,21 @@ This is a public code sample demonstrating how to integrate the Link Money Pay b
 
 ## Requirements
 
+Please ensure that you have interfaced with someone at Link Money in order to whitelist your redirect url. Also ensure that you have a valid client ID and secret from your merchant backend plus a valid merchant ID provided by Link Money. In order to acquire a valid Link Money merchant ID, [please reach out to us](https://www.link.money/contact).
+
 ## Installation
 
+Please ensure that the correct credentials for the merchant backend, the URL and path to the merchant backend services and the Link merchant ID correspond to the appropriate environment. The available Link Money environments are `sandbox` and `production`. This repo will be defaulted to `sandbox`. You will need to fill in the correct values to the `config` object that is in the `index.html` file.
+
+Once this is setup you can simply open the `index.html` file in any browser or run a local server of your choosing.
+
 ## Linking and Payment
+
+The linking and payment process can be broken into four steps.
+
+1.  Merchant backend generates an access token.
+2.  Merchant backend generates a session key.
+3.  User’s account is linked using the Link Money Pay by Bank SDK with a customer ID being generated.
+4.  Merchant backend makes a payment request using the appropriate tokens plus the customer ID.
+
+For further information please refer to [our documentation](https://developer.link.money/).
