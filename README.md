@@ -22,3 +22,15 @@ The linking and payment process can be broken into four steps.
 4.  Merchant backend makes a payment request using the appropriate tokens plus the customer ID.
 
 For further information please refer to [our documentation](https://developer.link.money/).
+
+## Customer Information and Accounts
+
+Once you have successfully created a customer within our system and retrieved a customer id, you can then easliy retrieve that customer's information and accounts using the SDK.
+
+1.  Save customer ID upon returning from linking flow.
+2.  Generate an access token if you haven't already.
+3.  Enter both values into either the `getCustomer` or `getAccounts` functions provided by the SDK.
+
+> Note: Both of these functions return a promise, so you will have to await their calls.
+
+For further information please refer to [our documentation](https://developer.link.money/products/sdks#get-customer-by-id).

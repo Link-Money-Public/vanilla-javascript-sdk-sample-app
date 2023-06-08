@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Link Money Vanilla Js Sample App</title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        min-height: 100%;
+        display: grid;
+        place-content: center;
+        gap: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="link-btn-pay-by-bank">Pay by Bank</button>
+    <button id="link-btn-make-payment">Make Payment</button>
+    <button id="link-btn-get-customer-info">Get Customer Info</button>
+    <button id="link-btn-get-customer-accouts">Get Customer Accounts</button>
+    <script type="module">
+      import Link from "https://static.link.money/linkmoney-web/v1/latest/linkmoney-web.min.js";
+
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          document
+            .getElementById("link-btn-pay-by-bank")
+            .addEventListener("click", async function () {
+              const config = {
+                sessionKey: "{SESSION_KEY}",
+                redirect: "{YOUR_REDIRECT_URL}",
+                environment: "sandbox",
+              };
+
+              const link = Link.LinkInstance(config);
+              link.action();
+            });
+          document
+            .getElementById("link-btn-make-payment")
+            .addEventListener("click", async function () {
+              const paymentBody = {
+                amount: {
+                  value: 100,
+                  currency: "USD",
+                },
+                // ...rest of the payment body
+              };
+              const paymentRes = await fetch(
+                "{YOUR_BACKEND_ENDPOINT}/make-payment",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(paymentBody),
+                }
+              );
+              console.log(paymentRes);
+            });
+          document
+            .getElementById("link-btn-get-customer-info")
+            .addEventListener("click", async function () {
+              const customerInfo = await Link.getCustomer(
+                "{ACCESS_TOKEN}",
+                "{CUSTOMER_ID}"
+              );
+              console.log(customerInfo);
+            });
+          document
+            .getElementById("link-btn-get-customer-accounts")
+            .addEventListener("click", async function () {
+              const customerAccounts = await Link.getAccounts(
+                "{ACCESS_TOKEN}",
+                "{CUSTOMER_ID}"
+              );
+              console.log(customerAccounts);
+            });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
