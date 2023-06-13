@@ -14,7 +14,7 @@ Once this is setup you can simply open the `index.html` file in any browser or r
 
 Your sample app should look like this:
 
-![image of application](https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/blob/main/gh/sample.png?raw=true?sanitize=true?width=350)
+![image of application](https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/blob/main/gh/sample.png?raw=true?sanitize=true?width=200)
 
 <hr />
 
