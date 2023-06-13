@@ -14,14 +14,13 @@ Once this is setup you can simply open the `index.html` file in any browser or r
 
 Your sample app should look like this:
 
-<img width="386" alt="sample-app" src="https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/assets/20342632/f4725708-b4b0-4148-b9c0-f076de76f8c4">
+![image of application](https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/blob/main/gh/sample.png?raw=true?sanitize=true)
 
 <hr />
 
 and once you click the "Pay by Bank" button you should be shot over to our Link Money Client, which looks like this:
 
-
-<img width="573" alt="link-money-client" src="https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/assets/20342632/dae01463-e889-43b4-b716-fe36ecce7251">
+![image of application](https://github.com/Link-Money-Public/vanilla-javascript-sdk-sample-app/blob/main/gh/sample.png?raw=true?sanitize=true)
 
 ## Linking and Payment
 
